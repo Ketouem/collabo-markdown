@@ -1,22 +1,15 @@
-from flask.ext.script import Manager, Server, Command
+from flask.ext.script import Shell, Manager
 
 from collabo import create_app
-from collabo import socketio
 
 app = create_app()
 manager = Manager(app)
 
 
-class Run(Command):
+def make_shell_context():
+    return dict(app=app)
 
-    def __init__(self, app):
-        self._app = app
-
-    def run(self):
-        socketio.run(self._app)
-
-manager.add_command("debug", Server(use_debugger=True, use_reloader=True))
-manager.add_command("run", Run(app))
+manager.add_command("shell", Shell(make_context=make_shell_context))
 
 if __name__ == "__main__":
     manager.run()
