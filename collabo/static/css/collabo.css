@@ -1,0 +1,12 @@
+body {
+	min-width: 100%;
+}
+.flask-pagedown {
+	min-width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.flask-pagedown-input, .flask-pagedown-preview {
+	flex: 1;
+	margin: 5px;
+}

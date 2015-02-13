@@ -1,0 +1,14 @@
+<html>
+    <head>
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/collabo.css') }}">
+	    {{ pagedown.include_pagedown() }}
+	</head>
+    <body>
+    	{{ form.pagedown(rows=10) }}
+    	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/markdownEvents.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/composeScreen.js') }}"></script>
+    </body>
+</html>
