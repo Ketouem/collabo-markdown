@@ -5,7 +5,8 @@ function updateMarkdown(markdown){
 
 $(document).ready(function(){
 	namespace = '/test';
-	var socket = io.connect('http://' + document.domain + ':' + location.port + namespace);
+	var protocol = window.location.protocol
+	var socket = io.connect(protocol + '//' + document.domain + ':' + location.port + namespace);
 	socket.on('connect', function() {
         socket.emit('my event', {data: 'I\'m connected!'});
     });
