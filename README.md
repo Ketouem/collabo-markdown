@@ -17,6 +17,7 @@ A Procfile is available to deploy the project on Heroku. In order to push it you
 
 ## TODOs:
 
+- Include a 'run gunicorn' step inside the manage script
 - Smart merge
 - Better UI/style
 - User management
